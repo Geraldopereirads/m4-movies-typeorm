@@ -5,7 +5,7 @@ export class Movie {
   @PrimaryGeneratedColumn("increment")
   id: number;
 
-  @Column({ type: "varchar", length: 50, unique: true })
+  @Column({ length: 50, unique: true })
   name: string;
 
   @Column({ type: "text", nullable: true })

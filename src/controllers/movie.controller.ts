@@ -13,6 +13,7 @@ export const createMovieController = async (
   res: Response
 ): Promise<Response> => {
   const movieData: Movie = await createMovieService(req.body);
+
   return res.status(201).json(movieData);
 };
 

@@ -15,6 +15,7 @@ export const createMovieService = async (
 ): Promise<Movie> => {
   const repo: TMovieRepo = AppDataSource.getRepository(Movie);
   const movies: Movie = await repo.save(movieData);
+  await repo.save(movies);
   return movies;
 };
 
@@ -28,14 +29,14 @@ export const readMovieService = async ({
 }: IPaginationParams): Promise<IPagination> => {
   const repo: TMovieRepo = AppDataSource.getRepository(Movie);
   const [movie, count]: [Movie[], number] = await repo.findAndCount({
-    order: {[sort]: order},
+    order: { [sort]: order },
     skip: page,
     take: perPage,
   });
 
   return {
     prevPage: page <= 1 ? null : prevPage,
-    nextPage: count - page <= perPage ? null : nextPage ,
+    nextPage: count - page <= perPage ? null : nextPage,
     count,
     data: movie,
   };

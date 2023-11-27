@@ -14,8 +14,8 @@ export const verifyNameExists = async (
 
   if (!name) return next();
 
-  const movieExists: boolean = await repo.exist({ where: {name}  });
+  const movieExists: boolean = await repo.exist({ where: { name } });
 
-  if(movieExists) throw new AppError("Movie already exists.")
+  if (movieExists) throw new AppError("Movie already exists.", 409);
   return next();
 };
