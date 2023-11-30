@@ -11,10 +11,10 @@ export const verifyIdExists = async (
 ): Promise<void> => {
   const id: number = Number(req.params.id);
   const repo: TMovieRepo = AppDataSource.getRepository(Movie);
-  const movie: Movie | null = await repo.findOneBy({ id: id });
+  const movieId: Movie | null = await repo.findOneBy({ id: id });
 
-  if (!movie) throw new AppError("Movie not found", 404);
+  if (!movieId) throw new AppError("Movie not found", 404);
 
-  res.locals = {...res, movie}
+  res.locals = { ...res, movieId };
   return next();
 };

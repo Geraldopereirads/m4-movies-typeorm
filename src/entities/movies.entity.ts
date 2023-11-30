@@ -8,12 +8,12 @@ export class Movie {
   @Column({ length: 50, unique: true })
   name: string;
 
-  @Column({ type: "text", nullable: true })
-  description?: string | undefined | null;
-
   @Column({ type: "integer" })
   duration: number;
 
   @Column({ type: "integer" })
   price: number;
+
+  @Column({ type: "text", nullable: true })
+  description?: string | undefined | null;
 }

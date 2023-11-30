@@ -1,15 +1,15 @@
 import { Router } from "express";
 import {
   createMovieController,
-  deleteMovieController,
   readMovieController,
   updateMovieController,
+  deleteMovieController,
 } from "../controllers/movie.controller";
-import { validateBody } from "../middlewares/validateBody.middleware";
-import { movieCreateSchema, movieUpdateSchema } from "../schema/movies.schema";
-import { verifyIdExists } from "../middlewares/verifyIdExists.middleware";
 import { pagination } from "../middlewares/pagination.middleware";
+import { validateBody } from "../middlewares/validateBody.middleware";
+import { verifyIdExists } from "../middlewares/verifyIdExists.middleware";
 import { verifyNameExists } from "../middlewares/verifyNameExists.middleware";
+import { movieCreateSchema, movieUpdateSchema } from "../schema/movies.schema";
 
 export const movieRouter: Router = Router();
 

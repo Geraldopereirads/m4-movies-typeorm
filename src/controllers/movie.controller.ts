@@ -12,7 +12,8 @@ export const createMovieController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const movieData: Movie = await createMovieService(req.body);
+  const payload: Movie = req.body;
+  const movieData: Movie = await createMovieService(payload);
 
   return res.status(201).json(movieData);
 };
@@ -29,9 +30,9 @@ export const updateMovieController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const { movie } = res.locals;
+  const { movieId } = res.locals;
   const movieData: Movie = req.body;
-  const movies: Movie = await updateMovieService(movie, movieData);
+  const movies: Movie = await updateMovieService(movieId, movieData);
   return res.status(200).json(movies);
 };
 
@@ -39,8 +40,8 @@ export const deleteMovieController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const { movie } = res.locals;
+  const { movieId } = res.locals;
 
-  await deleteMovieService(movie);
+  await deleteMovieService(movieId);
   return res.status(204).send();
 };

@@ -1,22 +1,24 @@
-import { Movie } from "../entities";
 import { AppDataSource } from "../data-source";
+import { Movie } from "../entities";
 import {
   TMovieCreate,
   TMovieRepo,
   TMovieUpdate,
 } from "../interfaces/movies.interfaces";
 import {
-  IPagination,
   IPaginationParams,
+  IPagination,
 } from "../interfaces/pagination.interface";
+import { movieSchema } from "../schema/movies.schema";
 
 export const createMovieService = async (
   movieData: TMovieCreate
 ): Promise<Movie> => {
   const repo: TMovieRepo = AppDataSource.getRepository(Movie);
-  const movies: Movie = await repo.save(movieData);
-  await repo.save(movies);
-  return movies;
+  const newMovies: Movie = repo.create(movieData);
+  await repo.save(newMovies);
+
+  return movieSchema.parse(newMovies);
 };
 
 export const readMovieService = async ({
