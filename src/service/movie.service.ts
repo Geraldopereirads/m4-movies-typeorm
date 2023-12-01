@@ -50,7 +50,9 @@ export const updateMovieService = async (
 ): Promise<Movie> => {
   const repo: TMovieRepo = AppDataSource.getRepository(Movie);
 
-  return await repo.save({ ...movie, ...movieData });
+  const newMovies: Movie = await repo.save({ ...movie, ...movieData });
+
+  return movieSchema.parse(newMovies);
 };
 
 export const deleteMovieService = async (movie: Movie): Promise<void> => {
