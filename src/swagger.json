@@ -1,0 +1,187 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Movies API",
+        "description": "Essa API tem como objetivo a manipulação",
+        "termsOfService": "http://localhost:3000/documentation",
+        "contact": {
+            "email": "geraldo.pereirads@hotmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "End Point Movies API"
+        }
+    ],
+    "paths": {
+        "/movies": {
+            "post": {
+                "summary": "Cadastra um novo filme no banco de dados.",
+                "description": "Essa rota será responsável por cadastrar um novo filme",
+                "tags": [
+                    "Movies"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Movies"
+                            },
+                            "examples": {
+                                "movies": {
+                                    "value": {
+                                        "duration": 610,
+                                        "name": "Vingadores",
+                                        "price": 1200,
+                                        "description": "Filme de Fantasia"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "409": {
+                        "description": "Movie already exists."
+                    },
+                    "400": {
+                        "description": "Zod Error"
+                    },
+                    "404": {
+                        "description": "Movie not found"
+                    },
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Movies"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "description": "Busca todos os filmes do banco de dados",
+                "summary": "Busca todos os filmes do banco de dados",
+                "tags": [
+                    "Movies"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Movies"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/movies/{id}": {
+            "patch": {
+                "description": "Alterar um Filme pelo ID",
+                "summary": "Alterar um Filme pelo ID",
+                "tags": [
+                    "Movies"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": false,
+                        "description": "Alterar o filme pelo ID"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Movies"
+                            },
+                            "examples": {
+                                "movies": {
+                                    "value": {
+                                        "duration": 10,
+                                        "name": "Vingadores 2",
+                                        "price": 100,
+                                        "description": "Filme de Fantasia"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "409": {
+                        "description": "Movie already exists."
+                    },
+                    "400": {
+                        "description": "Zod Error"
+                    },
+                    "404": {
+                        "description": "Movie not found"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Movies"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletar um Filme pelo ID",
+                "summary": "Deletar um Filme pelo ID",
+                "tags": [
+                    "Movies"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": false,
+                        "description": "Deletar o filme pelo ID"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Movies": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "duration": {
+                        "type": "number"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "number"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
