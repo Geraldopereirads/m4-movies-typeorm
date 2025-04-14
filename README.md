@@ -52,5 +52,4 @@ O principal objetivo deste projeto é implementar um CRUD completo de filmes, co
 ### 1. Clone o projeto
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
-cd seu-repo
+git clone git@github.com:Geraldopereirads/m4-movies-typeorm.git
