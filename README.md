@@ -1,25 +1,56 @@
-# Locadora de filmes com TypeORM
+# 🎬 Projeto Backend - Catálogo de Filmes
 
-## Como Acessar a Documentação da API Localmente
+Este é um projeto backend para cadastro e gerenciamento de filmes, desenvolvido utilizando **TypeScript**, **Express**, **TypeORM**, **PostgreSQL** e **Zod** para validação e serialização.
+---
 
-Para obter acesso à documentação da API, siga as etapas abaixo:
+## 📚 Objetivo do Projeto
 
-1. **Executar a API Localmente:**
-   Certifique-se de ter todas as dependências instaladas e execute a API localmente em sua máquina. Use o seguinte comando:
+O principal objetivo deste projeto é implementar um CRUD completo de filmes, com tipagens corretas, validações robustas, tratamento de erros, diagrama relacional, cobertura de testes e boas práticas de codificação.
 
-   ```bash
-   npm install
-   npm run dev
+---
 
-   
-2. **Executar testes automáticos jest:**
-   
+## ✅ Funcionalidades
 
-   ```bash
-   npm run test
+- Cadastro de filmes
+- Listagem de filmes
+- Atualização de dados
+- Remoção de filmes
+- Validações com **Zod**
+- Middleware global para tratativa de erros
+- Testes automatizados com cobertura
+- Integração com banco de dados via **TypeORM**
+- Diagrama relacional representando as entidades
 
-3. **URL da documentação swagger:**
+---
 
+## ⚙️ Tecnologias e Ferramentas
 
-   ```bash
-   http://localhost:3000/documentation
+- **Node.js**
+- **TypeScript**
+- **Express.js**
+- **TypeORM**
+- **PostgreSQL**
+- **Zod**
+- **Jest**
+- **ts-node-dev**
+- **dotenv**
+- **uuid**
+
+---
+
+## 🧠 Boas Práticas Aplicadas
+
+- ✔️ Código indentado corretamente  
+- ✔️ Tipagem estrita com `any` utilizado somente se necessário  
+- ✔️ Nomenclatura semântica e coerente para variáveis e funções  
+- ✔️ Projeto devidamente configurado para execução local e de testes  
+
+---
+
+## 🛠️ Instalação e Execução
+
+### 1. Clone o projeto
+
+```bash
+git clone https://github.com/seu-usuario/seu-repo.git
+cd seu-repo
