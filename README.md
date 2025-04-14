@@ -53,3 +53,14 @@ O principal objetivo deste projeto é implementar um CRUD completo de filmes, co
 
 ```bash
 git clone git@github.com:Geraldopereirads/m4-movies-typeorm.git
+```
+
+```bash
+npm install
+```
+```bash
+DATABASE_URL=postgres://user:password@localhost:5432/database_name
+```
+```bash
+npm run dev
+```
