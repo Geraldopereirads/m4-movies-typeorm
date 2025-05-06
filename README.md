@@ -1,6 +1,6 @@
 # 🎬 Projeto Backend - Catálogo de Filmes
 
-Este é um projeto backend para cadastro e gerenciamento de filmes, desenvolvido utilizando **TypeScript**, **Express**, **TypeORM**, **PostgreSQL** e **Zod** para validação e serialização.
+Este é um projeto backend para cadastro e gerenciamento de filmes.
 ---
 
 ## 📚 Objetivo do Projeto
@@ -35,6 +35,7 @@ O principal objetivo deste projeto é implementar um CRUD completo de filmes, co
 - **ts-node-dev**
 - **dotenv**
 - **uuid**
+- **Swagger**
 
 ---
 
@@ -59,8 +60,9 @@ git clone git@github.com:Geraldopereirads/m4-movies-typeorm.git
 npm install
 ```
 ```bash
-DATABASE_URL=postgres://user:password@localhost:5432/database_name
-```
-```bash
 npm run dev
+```
+### URL Swagger
+```bash
+https://m4-movies-typeorm.onrender.com/documentation
 ```
