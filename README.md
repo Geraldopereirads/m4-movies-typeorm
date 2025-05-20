@@ -62,7 +62,3 @@ npm install
 ```bash
 npm run dev
 ```
-### URL Swagger
-```bash
-https://m4-movies-typeorm.onrender.com/documentation
-```
