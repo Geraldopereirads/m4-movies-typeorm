@@ -11,7 +11,7 @@
     },
     "servers": [
         {
-            "url": "http://localhost:3000",
+            "url": "https://m4-movies-typeorm-er2tmk0ai-geraldopereirads-projects.vercel.app",
             "description": "End Point Movies API"
         }
     ],
