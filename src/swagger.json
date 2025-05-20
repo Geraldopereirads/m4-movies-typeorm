@@ -3,7 +3,7 @@
     "info": {
         "title": "Movies API",
         "description": "Essa API tem como objetivo a manipulação",
-        "termsOfService": "http://localhost:3000/documentation",
+        "termsOfService": "https://m4-movies-typeorm-er2tmk0ai-geraldopereirads-projects.vercel.app/documentation",
         "contact": {
             "email": "geraldo.pereirads@hotmail.com"
         },

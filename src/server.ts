@@ -13,7 +13,7 @@ AppDataSource.initialize()
 
       setInterval(async () => {
         try {
-          const url = "https://m4-movies-typeorm.onrender.com/movies";
+          const url = "m4-movies-typeorm-geraldopereirads-geraldopereirads-projects.vercel.app";
           const res = await axios.get(url);
           console.log(`Auto-ping OK: ${res.status}`);
         } catch (error: any) {
