@@ -7,7 +7,9 @@ import swaggerDocs from "./swagger.json";
 
 const app: Application = express();
 app.use(express.json());
-
+app.get("/heath", (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
 app.use("/documentation", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use("/movies", movieRouter);
 app.use(handleError);
