@@ -13,7 +13,6 @@ Backend para cadastro e gerenciamento de filmes, com **CRUD completo**, validaç
 
 ## 🌐 Deploy e Banco de Dados
 
-- Backend online no Render: [https://m4-movies-typeorm.onrender.com](https://m4-movies-typeorm.onrender.com)  
 - API documentada via Swagger: [https://m4-movies-typeorm.onrender.com/documentation](https://m4-movies-typeorm.onrender.com/documentation)  
 - Banco de dados **PostgreSQL hospedado no Neon**, com migrations versionadas  
 
